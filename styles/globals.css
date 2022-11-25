@@ -24,3 +24,9 @@ a {
     background: black;
   }
 }
+
+@media (max-width: 1000px) {
+  .test-div{
+    background-color: gray
+  }
+}
