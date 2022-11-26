@@ -1,21 +1,23 @@
 /** @format */
 import Image from "next/image";
+import { useState } from "react";
 export default function Sub() {
+  const [menu,setmenu]=useState(false);
+  console.log(menu)
+
   return (
     <>
-      <div className="test-div">
-        <h1 style={{ margin: "0px" }}>hello</h1>
-        <h1>max</h1>
-        <div style={{ margin: "10px" }}>
-          <Image
-            src="/IMG_0730.jpg"
-            layout="responsive"
-            width="100"
-            height="10"
-            alt=""
-          ></Image>
-        </div>
-      </div>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check" onClick={()=>setmenu(!menu)}></input>
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      </div> 
+      <a style={{zIndex:'190',position:'relative',top:'100px'}}>test</a>
+      {menu?
+      <div style={{backgroundColor:'blue',height:'100vh',top:'0px',position:'abusolute',zIndex:'1'}}></div>
+      :
+      <a style={{top:'100px'}}>aa</a>}
     </>
+
+    
   );
 }
